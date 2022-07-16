@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Transform modelTransform;
+    [SerializeField] private Animator animator;
 
     private Vector3 input;
 
@@ -20,7 +21,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (input == Vector3.zero) return;
+        if (input == Vector3.zero)
+        {
+            return;
+        }
 
         Move();
     }
