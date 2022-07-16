@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1105406711}
   - component: {fileID: 1105406714}
   - component: {fileID: 1105406713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1126758376}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126758375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.743}
+  m_LocalPosition: {x: -0.48, y: 0, z: 0.743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -129,9 +129,9 @@ GameObject:
   - component: {fileID: 95810153321087671}
   - component: {fileID: 1916860009}
   - component: {fileID: 1557091984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 95810153846043691}
   - component: {fileID: 95810153846043688}
   - component: {fileID: 95810153846043689}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 95810154122123884}
   - component: {fileID: 95810154122123793}
   - component: {fileID: 95810154122123886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,6 +419,10 @@ PrefabInstance:
     - target: {fileID: 2676089365898396141, guid: 77753ddb47c54ee41b94f2c69c9bb7df, type: 3}
       propertyPath: m_Name
       value: SM_Throwing_Knife
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676089365898396141, guid: 77753ddb47c54ee41b94f2c69c9bb7df, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3344118114590874455, guid: 77753ddb47c54ee41b94f2c69c9bb7df, type: 3}
       propertyPath: m_RootOrder
