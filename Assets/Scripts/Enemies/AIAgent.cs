@@ -6,8 +6,8 @@ using UnityEngine;
 public abstract class AIAgent : MonoBehaviour
 {
     [SerializeField] protected AISensor aiSensor;
-    [SerializeField] protected float tellOthersPositionOfPlayerRadius = 3f;
-    [SerializeField] protected LayerMask enemiesLayers;
+    [SerializeField] private float tellOthersPositionOfPlayerRadius = 3f;
+    [SerializeField] private LayerMask enemiesLayers;
 
     private void OnEnable()
     {
@@ -45,7 +45,7 @@ public abstract class AIAgent : MonoBehaviour
 
     }
 
-    private void OnDrawGizmosSelected()
+    protected virtual void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, tellOthersPositionOfPlayerRadius);

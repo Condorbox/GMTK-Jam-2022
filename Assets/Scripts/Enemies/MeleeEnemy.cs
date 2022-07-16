@@ -6,15 +6,15 @@ using UnityEngine.AI;
 
 public class MeleeEnemy : AIAgent
 {
-    private enum State
+    protected enum State
     {
         Patrolling,
         Chasing
     }
 
     [Header("Melee Enemy")]
-    [SerializeField] private NavMeshAgent agent;
-    private State state;
+    [SerializeField] protected NavMeshAgent agent;
+    protected State state;
 
     [Header("Patrolling")]
     [SerializeField] private Transform[] wayPoints;
@@ -23,12 +23,12 @@ public class MeleeEnemy : AIAgent
     [SerializeField] private float timeToWaitBtwPoints = .5f;
 
     private int index = 0;
-    private bool waiting = false;
+    protected bool waiting = false;
 
     [Header("Chasing")]
     [SerializeField] private float chasingSpeed = 7f;
-    [SerializeField] private float timeToForget;
-    private Transform playerTransform;
+    [SerializeField] private float timeToForget = 1.5f;
+    protected Transform playerTransform;
     private float counter;
 
     [Header("Attack")]
@@ -51,9 +51,14 @@ public class MeleeEnemy : AIAgent
                 Patrolling();
                 break;
             case State.Chasing:
-                Chasing();
+                AttackAction();
                 break;
         }
+    }
+
+    protected virtual void AttackAction()
+    {
+        Chasing();
     }
     private void Patrolling()
     {
@@ -85,7 +90,7 @@ public class MeleeEnemy : AIAgent
         waiting = false;
     }
 
-    private void Chasing()
+    protected void Chasing()
     {
         if (playerTransform == null)
         {
@@ -106,15 +111,17 @@ public class MeleeEnemy : AIAgent
             }
         }
 
-        if (Vector3.Distance(playerTransform.position, transform.position) < attackDistance) //TODO Roll Dice, base Attack?
+        if (Vector3.Distance(playerTransform.position, transform.position) < attackDistance)
         {
+            Debug.Log("Attack");
             Collider[] playerCollider = Physics.OverlapSphere(attackPoint.position, attackSize, playerLayer, QueryTriggerInteraction.Ignore);
 
             foreach (Collider player in playerCollider)
             {
-                if (TryGetComponent<PlayerMovement>(out PlayerMovement playerMovement))
+                if (player.gameObject.transform.parent.TryGetComponent<PlayerMovement>(out PlayerMovement playerMovement)) //TODO change this xd
                 {
-                    Debug.Log($"player {playerMovement.gameObject.name} hit");
+                    Debug.Log($"player {player.gameObject.transform.parent.name} hit"); //TODO Roll Dice, base Attack?
+                    break;
                 }
             }
         }
@@ -128,14 +135,28 @@ public class MeleeEnemy : AIAgent
     protected override void PlayerDetected(Transform playerTransform)
     {
         this.playerTransform = playerTransform;
+        StateToAttackAction();
+    }
+
+    protected virtual void StateToAttackAction()
+    {
         counter = timeToForget;
         agent.speed = chasingSpeed;
         state = State.Chasing;
     }
 
-    private void StateToPatrolling()
+    protected void StateToPatrolling()
     {
         waiting = false;
         state = State.Patrolling;
+    }
+
+    protected override void OnDrawGizmosSelected()
+    {
+        base.OnDrawGizmosSelected();
+
+        if (attackPoint == null) return;
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(attackPoint.position, attackSize);
     }
 }
