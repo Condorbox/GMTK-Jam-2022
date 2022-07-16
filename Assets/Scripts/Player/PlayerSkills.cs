@@ -31,7 +31,7 @@ public class PlayerSkills : MonoBehaviour
     private void Invisible(bool boolean)
     {
         isInvisible = boolean;
-        isInvisibleEffects.SetActive(boolean);
+        //isInvisibleEffects.SetActive(boolean);
 
         float alpha;
 
