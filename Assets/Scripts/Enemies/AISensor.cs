@@ -172,7 +172,7 @@ public class AISensor : MonoBehaviour
         scanInterval = 1.0f / scanFrequency;
     }
 
-    private void OnDrawGizmosSelected()
+    protected virtual void OnDrawGizmosSelected()
     {
         if (debugMesh)
         {

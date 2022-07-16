@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AISensor))]
-public class AIAgent : MonoBehaviour
+public abstract class AIAgent : MonoBehaviour
 {
-    [SerializeField] private AISensor aiSensor;
+    [SerializeField] protected AISensor aiSensor;
+    [SerializeField] protected float tellOthersPositionOfPlayerRadius = 3f;
+    [SerializeField] protected LayerMask enemiesLayers;
 
     private void OnEnable()
     {
@@ -21,10 +23,32 @@ public class AIAgent : MonoBehaviour
     private void AISensor_OnPlayerDetected(object sender, Transform e)
     {
         PlayerDetected(e);
+        TellOthersPlayerIsInSight(e);
     }
 
-    protected virtual void PlayerDetected(Transform player)
+    protected abstract void PlayerDetected(Transform playerTransform);
+
+    protected virtual void TellOthersPlayerIsInSight(Transform playerTransform)
     {
-        Debug.Log("Player detected in: " + player.position);
+        Collider[] enemiesColliders = Physics.OverlapSphere(transform.position, tellOthersPositionOfPlayerRadius, enemiesLayers, QueryTriggerInteraction.Ignore);
+
+        foreach (Collider enemy in enemiesColliders)
+        {
+            if (enemy.TryGetComponent<AIAgent>(out AIAgent agent) && enemy.gameObject != this.gameObject)
+            {
+                agent.ReceivedPlayerIsInSight(playerTransform);
+            }
+        }
+    }
+
+    protected virtual void ReceivedPlayerIsInSight(Transform playerTransform)
+    {
+
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, tellOthersPositionOfPlayerRadius);
     }
 }
