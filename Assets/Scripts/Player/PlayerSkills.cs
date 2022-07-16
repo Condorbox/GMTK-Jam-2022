@@ -11,6 +11,8 @@ public class PlayerSkills : MonoBehaviour
 
     private bool isInvisible;
 
+    [SerializeField] private GameObject isInvisibleEffects;
+
     void Start()
     {
         isInvisible = false;
@@ -29,6 +31,7 @@ public class PlayerSkills : MonoBehaviour
     private void Invisible(bool boolean)
     {
         isInvisible = boolean;
+        isInvisibleEffects.SetActive(boolean);
 
         float alpha;
 
