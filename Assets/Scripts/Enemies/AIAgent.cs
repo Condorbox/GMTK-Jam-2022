@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AISensor))]
 public class AIAgent : MonoBehaviour
 {
     [SerializeField] private AISensor aiSensor;
@@ -19,6 +20,11 @@ public class AIAgent : MonoBehaviour
 
     private void AISensor_OnPlayerDetected(object sender, Transform e)
     {
-        Debug.Log("Player detected in: " + e.position);
+        PlayerDetected(e);
+    }
+
+    protected virtual void PlayerDetected(Transform player)
+    {
+        Debug.Log("Player detected in: " + player.position);
     }
 }
