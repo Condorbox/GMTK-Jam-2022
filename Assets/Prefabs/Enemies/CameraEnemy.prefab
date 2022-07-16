@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7863532730547640827}
   - component: {fileID: 7863532730547640825}
   - component: {fileID: 7863532730547640826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7863532731261518289}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: waypoint_2
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -155,7 +155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7863532731282862913}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: waypoint_1
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -261,7 +261,7 @@ MonoBehaviour:
     m_Bits: 64
   occlusionLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 640
 --- !u!1 &7863532732140218809
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 7863532732140218808}
   - component: {fileID: 7863532732140218813}
   - component: {fileID: 7863532732140218814}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7863532732289643457}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CameraEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 7863532732368338294}
   - component: {fileID: 7863532732368338251}
   - component: {fileID: 7863532732368338292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,7 +472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7863532732442535744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: waypoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}

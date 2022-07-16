@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AISensor))]
 public abstract class AIAgent : MonoBehaviour
 {
     [SerializeField] protected AISensor aiSensor;
