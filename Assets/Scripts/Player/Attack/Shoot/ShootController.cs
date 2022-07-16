@@ -1,5 +1,7 @@
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using Random = UnityEngine.Random;
 
 public class ShootController : MonoBehaviour
@@ -12,6 +14,9 @@ public class ShootController : MonoBehaviour
 
     private event EventHandler OnShoot;
     private event EventHandler OnFailShoot;
+
+    //[SerializeField] private Animator animator;
+
 
     private void Awake()
     {

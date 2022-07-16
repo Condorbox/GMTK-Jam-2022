@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class PlayerSkills : MonoBehaviour
 {
-    [SerializeField] private GameObject meleeWeapon;
+    [SerializeField] private Animator animator;
+    public bool isInvisible;
 
-    [SerializeField] private Material[] materials;
+    //[SerializeField] private GameObject meleeWeapon;
+    //[SerializeField] private GameObject isInvisibleEffects;
 
-    private bool isInvisible;
-
-    [SerializeField] private GameObject isInvisibleEffects;
 
     void Start()
     {
@@ -31,34 +30,16 @@ public class PlayerSkills : MonoBehaviour
     private void Invisible(bool boolean)
     {
         isInvisible = boolean;
+        animator.SetBool("Invisible", boolean);
         //isInvisibleEffects.SetActive(boolean);
-
-        float alpha;
-
-        if (boolean)
-        {
-            alpha = 0.5f;
-        }
-        else
-        {
-            alpha = 1f;
-        }
-
-        foreach (Material mat in materials)
-        {
-            Color newColor = mat.color;
-            newColor.a = alpha;
-            mat.color = newColor;
-
-        }
     }
 
     private void Melee(bool boolean)
     {
         //Debug.Log(Mathf.RoundToInt(UnityEngine.Random.Range(1, 6)));
+        animator.SetBool("Attack", boolean);
 
-
-        meleeWeapon.SetActive(boolean);
+        //meleeWeapon.SetActive(boolean);
         // meleeWeapon.SetActive(false) --> at the end of the melee animation
     }
 }

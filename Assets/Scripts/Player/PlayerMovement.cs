@@ -13,8 +13,17 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 input;
 
+    private PlayerSkills playerSkills;
+    private void Start()
+    {
+        playerSkills = GetComponent<PlayerSkills>();
+    }
+
     private void Update()
     {
+        if (playerSkills.isInvisible) moveSpeed = 2f;
+        else moveSpeed = 4f;
+
         GetInput();
         Look();
     }
@@ -23,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (input == Vector3.zero)
         {
+            animator.SetBool("Walk", false);
             return;
         }
 
@@ -45,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Move() 
     {
+        animator.SetBool("Walk", true);
         rb.MovePosition(transform.position + input.ToIsometric() * input.normalized.magnitude * moveSpeed * Time.deltaTime);
     }
 }

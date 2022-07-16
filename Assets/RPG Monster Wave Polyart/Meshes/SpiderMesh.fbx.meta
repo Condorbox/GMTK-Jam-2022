@@ -1,93 +1,257 @@
 fileFormatVersion: 2
 guid: c5f524b1573843246aa751dbee623cab
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: Belly01
-    100002: Belly02
-    100004: Body
-    100006: Eye01
-    100008: Eye02
-    100010: Eye03
-    100012: Eye04
-    100014: Eye05
-    100016: Eye06
-    100018: EyeJaw
-    100020: Head
-    100022: //RootNode
-    100024: JawL01
-    100026: JawL02
-    100028: JawL03
-    100030: JawR01
-    100032: JawR02
-    100034: JawR03
-    100036: LegL01
-    100038: LegL02
-    100040: LegL03
-    100042: LegL04
-    100044: LegL05
-    100046: LegL06
-    100048: LegL07
-    100050: LegL08
-    100052: LegL09
-    100054: LegR01
-    100056: LegR02
-    100058: LegR03
-    100060: LegR04
-    100062: LegR05
-    100064: LegR06
-    100066: LegR07
-    100068: LegR08
-    100070: LegR09
-    100072: Spider
-    100074: Spine01
-    100076: Spine02
-    400000: Belly01
-    400002: Belly02
-    400004: Body
-    400006: Eye01
-    400008: Eye02
-    400010: Eye03
-    400012: Eye04
-    400014: Eye05
-    400016: Eye06
-    400018: EyeJaw
-    400020: Head
-    400022: //RootNode
-    400024: JawL01
-    400026: JawL02
-    400028: JawL03
-    400030: JawR01
-    400032: JawR02
-    400034: JawR03
-    400036: LegL01
-    400038: LegL02
-    400040: LegL03
-    400042: LegL04
-    400044: LegL05
-    400046: LegL06
-    400048: LegL07
-    400050: LegL08
-    400052: LegL09
-    400054: LegR01
-    400056: LegR02
-    400058: LegR03
-    400060: LegR04
-    400062: LegR05
-    400064: LegR06
-    400066: LegR07
-    400068: LegR08
-    400070: LegR09
-    400072: Spider
-    400074: Spine01
-    400076: Spine02
-    4300000: Spider
-    7400000: Take 001
-    9500000: //RootNode
-    13700000: Spider
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Belly01
+  - first:
+      1: 100002
+    second: Belly02
+  - first:
+      1: 100004
+    second: Body
+  - first:
+      1: 100006
+    second: Eye01
+  - first:
+      1: 100008
+    second: Eye02
+  - first:
+      1: 100010
+    second: Eye03
+  - first:
+      1: 100012
+    second: Eye04
+  - first:
+      1: 100014
+    second: Eye05
+  - first:
+      1: 100016
+    second: Eye06
+  - first:
+      1: 100018
+    second: EyeJaw
+  - first:
+      1: 100020
+    second: Head
+  - first:
+      1: 100022
+    second: //RootNode
+  - first:
+      1: 100024
+    second: JawL01
+  - first:
+      1: 100026
+    second: JawL02
+  - first:
+      1: 100028
+    second: JawL03
+  - first:
+      1: 100030
+    second: JawR01
+  - first:
+      1: 100032
+    second: JawR02
+  - first:
+      1: 100034
+    second: JawR03
+  - first:
+      1: 100036
+    second: LegL01
+  - first:
+      1: 100038
+    second: LegL02
+  - first:
+      1: 100040
+    second: LegL03
+  - first:
+      1: 100042
+    second: LegL04
+  - first:
+      1: 100044
+    second: LegL05
+  - first:
+      1: 100046
+    second: LegL06
+  - first:
+      1: 100048
+    second: LegL07
+  - first:
+      1: 100050
+    second: LegL08
+  - first:
+      1: 100052
+    second: LegL09
+  - first:
+      1: 100054
+    second: LegR01
+  - first:
+      1: 100056
+    second: LegR02
+  - first:
+      1: 100058
+    second: LegR03
+  - first:
+      1: 100060
+    second: LegR04
+  - first:
+      1: 100062
+    second: LegR05
+  - first:
+      1: 100064
+    second: LegR06
+  - first:
+      1: 100066
+    second: LegR07
+  - first:
+      1: 100068
+    second: LegR08
+  - first:
+      1: 100070
+    second: LegR09
+  - first:
+      1: 100072
+    second: Spider
+  - first:
+      1: 100074
+    second: Spine01
+  - first:
+      1: 100076
+    second: Spine02
+  - first:
+      4: 400000
+    second: Belly01
+  - first:
+      4: 400002
+    second: Belly02
+  - first:
+      4: 400004
+    second: Body
+  - first:
+      4: 400006
+    second: Eye01
+  - first:
+      4: 400008
+    second: Eye02
+  - first:
+      4: 400010
+    second: Eye03
+  - first:
+      4: 400012
+    second: Eye04
+  - first:
+      4: 400014
+    second: Eye05
+  - first:
+      4: 400016
+    second: Eye06
+  - first:
+      4: 400018
+    second: EyeJaw
+  - first:
+      4: 400020
+    second: Head
+  - first:
+      4: 400022
+    second: //RootNode
+  - first:
+      4: 400024
+    second: JawL01
+  - first:
+      4: 400026
+    second: JawL02
+  - first:
+      4: 400028
+    second: JawL03
+  - first:
+      4: 400030
+    second: JawR01
+  - first:
+      4: 400032
+    second: JawR02
+  - first:
+      4: 400034
+    second: JawR03
+  - first:
+      4: 400036
+    second: LegL01
+  - first:
+      4: 400038
+    second: LegL02
+  - first:
+      4: 400040
+    second: LegL03
+  - first:
+      4: 400042
+    second: LegL04
+  - first:
+      4: 400044
+    second: LegL05
+  - first:
+      4: 400046
+    second: LegL06
+  - first:
+      4: 400048
+    second: LegL07
+  - first:
+      4: 400050
+    second: LegL08
+  - first:
+      4: 400052
+    second: LegL09
+  - first:
+      4: 400054
+    second: LegR01
+  - first:
+      4: 400056
+    second: LegR02
+  - first:
+      4: 400058
+    second: LegR03
+  - first:
+      4: 400060
+    second: LegR04
+  - first:
+      4: 400062
+    second: LegR05
+  - first:
+      4: 400064
+    second: LegR06
+  - first:
+      4: 400066
+    second: LegR07
+  - first:
+      4: 400068
+    second: LegR08
+  - first:
+      4: 400070
+    second: LegR09
+  - first:
+      4: 400072
+    second: Spider
+  - first:
+      4: 400074
+    second: Spine01
+  - first:
+      4: 400076
+    second: Spine02
+  - first:
+      43: 4300000
+    second: Spider
+  - first:
+      74: 7400000
+    second: Take 001
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Spider
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -96,8 +260,10 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'LeftHand' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -120,25 +286,34 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -147,12 +322,207 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: SpiderMesh(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spider
+      parentName: SpiderMesh(Clone)
+      position: {x: -0, y: 0.42938846, z: -0.59342825}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Body
+      parentName: SpiderMesh(Clone)
+      position: {x: -5.366125e-18, y: 0.31369865, z: 0.015749395}
+      rotation: {x: -0.62319803, y: 0.33331853, z: -0.6238502, w: 0.33366737}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine01
+      parentName: Body
+      position: {x: -0.3373349, y: 0.004302729, z: 4.3620976e-17}
+      rotation: {x: 0.9389015, y: 0.34418595, z: 8.3067866e-17, w: 3.4765677e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine02
+      parentName: Spine01
+      position: {x: -0.45484877, y: 0.0066399877, z: -1.4943575e-18}
+      rotation: {x: -0.006238092, y: -0.0017334321, z: -0.1096875, w: 0.99394506}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head
+      parentName: Spine02
+      position: {x: -0.28721058, y: 0.0005055257, z: 0.0013889263}
+      rotation: {x: 0.0088147465, y: 0.0056433263, z: -0.18555798, w: 0.98257756}
+      scale: {x: 1, y: 1, z: 1}
+    - name: EyeJaw
+      parentName: Head
+      position: {x: -0.124089055, y: -1.4210854e-16, z: 5.185563e-17}
+      rotation: {x: 0.2764881, y: 0.4749194, z: -0.2675385, w: 0.79147273}
+      scale: {x: 1, y: 1, z: 1}
+    - name: JawL01
+      parentName: EyeJaw
+      position: {x: -0.18229397, y: -7.105427e-17, z: -1.4210854e-16}
+      rotation: {x: -0.3084675, y: -0.44333497, z: 0.30478922, w: 0.7844779}
+      scale: {x: 1, y: 1, z: 1}
+    - name: JawL02
+      parentName: JawL01
+      position: {x: -0.093945466, y: 2.1316282e-16, z: 7.105427e-17}
+      rotation: {x: -0.28717777, y: -0.20590536, z: -0.05665965, w: 0.93376744}
+      scale: {x: 1, y: 1, z: 1}
+    - name: JawL03
+      parentName: JawL02
+      position: {x: -0.119515024, y: -1.4210854e-16, z: -7.9936054e-17}
+      rotation: {x: 0.51051176, y: 0.69356227, z: -0.13773672, w: 0.48926243}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye02
+      parentName: EyeJaw
+      position: {x: -0.046557654, y: -0.08471089, z: 0.20537828}
+      rotation: {x: 0.007672875, y: 0.20242754, z: -0.10050163, w: 0.9740963}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye04
+      parentName: EyeJaw
+      position: {x: 0.1423273, y: -0.10723162, z: 0.23436795}
+      rotation: {x: -0.03265954, y: 0.19571556, z: -0.046505615, w: 0.9790128}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye03
+      parentName: EyeJaw
+      position: {x: 0.1538074, y: -0.12586674, z: 0.06584013}
+      rotation: {x: 0.14192982, y: 0.2445818, z: -0.06766849, w: 0.956795}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye06
+      parentName: EyeJaw
+      position: {x: 0.20701513, y: -0.09603685, z: -0.08997952}
+      rotation: {x: 0.052159447, y: 0.2122101, z: -0.10157255, w: 0.97053045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye01
+      parentName: EyeJaw
+      position: {x: -0.04360853, y: -0.17428817, z: 0.028332446}
+      rotation: {x: 0.049406223, y: 0.19634998, z: 0.039320618, w: 0.9784987}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye05
+      parentName: EyeJaw
+      position: {x: -0.17457631, y: -0.055932615, z: 0.119850405}
+      rotation: {x: 0.037582316, y: 0.21135688, z: 0.0034623127, w: 0.97668004}
+      scale: {x: 1, y: 1, z: 1}
+    - name: JawR01
+      parentName: EyeJaw
+      position: {x: 0.11283409, y: -0.060207557, z: -0.12990189}
+      rotation: {x: -0.29596478, y: -0.47451597, z: 0.31694615, w: 0.7660186}
+      scale: {x: 1, y: 1, z: 1}
+    - name: JawR02
+      parentName: JawR01
+      position: {x: -0.09394525, y: 3.5527135e-16, z: 2.4868996e-16}
+      rotation: {x: 0.28715992, y: 0.20563363, z: -0.056740735, w: 0.9338279}
+      scale: {x: 1, y: 1, z: 1}
+    - name: JawR03
+      parentName: JawR02
+      position: {x: -0.119515166, y: 0, z: 1.0658141e-16}
+      rotation: {x: 0.693559, y: -0.51051307, z: -0.48926508, w: -0.13773905}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegL01
+      parentName: Spine02
+      position: {x: -0.1299891, y: 0.19480848, z: 0.41206974}
+      rotation: {x: 0.5475258, y: 0.5377555, z: -0.32400608, w: 0.553222}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegL02
+      parentName: LegL01
+      position: {x: -0.11250724, y: 5.3290704e-17, z: -3.5527136e-17}
+      rotation: {x: -0.3519973, y: -0.039806727, z: -0.1531707, w: 0.92252487}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegL03
+      parentName: LegL02
+      position: {x: -0.16077863, y: -7.105427e-17, z: -1.4210854e-16}
+      rotation: {x: -0.1143039, y: 0.5533244, z: -0.4461281, w: 0.69407237}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegR01
+      parentName: Spine02
+      position: {x: -0.1299886, y: 0.19480814, z: -0.41207}
+      rotation: {x: -0.5451695, y: -0.51536125, z: -0.33358186, w: 0.57089067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegR02
+      parentName: LegR01
+      position: {x: -0.112506986, y: 5.3290704e-17, z: -1.110223e-16}
+      rotation: {x: 0.3505956, y: 0.023319362, z: -0.15589093, w: 0.9231669}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegR03
+      parentName: LegR02
+      position: {x: -0.16077842, y: 1.0658141e-16, z: 3.5527135e-16}
+      rotation: {x: -0.553323, y: -0.11430345, z: 0.69407326, w: 0.4461286}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Belly01
+      parentName: Spine01
+      position: {x: -0.060389195, y: -0.43627617, z: -2.0884398e-16}
+      rotation: {x: 0.46819004, y: 0.5299038, z: -0.46819004, w: 0.5299038}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Belly02
+      parentName: Spine01
+      position: {x: 0.32790363, y: -0.23482816, z: -1.102271e-16}
+      rotation: {x: 0.46819004, y: 0.5299038, z: -0.46819004, w: 0.5299038}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegL04
+      parentName: Spine01
+      position: {x: -0.2189111, y: 0.17208114, z: 0.42330676}
+      rotation: {x: 0.6186964, y: 0.51406604, z: -0.3421032, w: 0.48571214}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegL05
+      parentName: LegL04
+      position: {x: -0.18298778, y: -2.4868996e-16, z: -1.7763568e-17}
+      rotation: {x: -0.14915644, y: -0.675904, z: -0.05297575, w: 0.7197915}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegL06
+      parentName: LegL05
+      position: {x: -0.25553408, y: 8.881784e-18, z: 1.4210854e-16}
+      rotation: {x: -0.33910722, y: 0.45973355, z: -0.5517913, w: 0.60760003}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegL07
+      parentName: Spine01
+      position: {x: 0.00068679865, y: 0.17632152, z: 0.44538784}
+      rotation: {x: 0.04875213, y: 0.83838934, z: -0.5329701, w: 0.10329358}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegL08
+      parentName: LegL07
+      position: {x: -0.20172787, y: -2.4868996e-16, z: -2.4868996e-16}
+      rotation: {x: 0.25917724, y: -0.08940755, z: -0.07193533, w: 0.9589884}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegL09
+      parentName: LegL08
+      position: {x: -0.31364962, y: 7.105427e-17, z: 2.842171e-16}
+      rotation: {x: -0.16766177, y: 0.11832708, z: -0.23786202, w: 0.9493735}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegR04
+      parentName: Spine01
+      position: {x: -0.21891113, y: 0.17208119, z: -0.423307}
+      rotation: {x: 0.6186961, y: 0.5140656, z: 0.34210354, w: -0.48571277}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegR05
+      parentName: LegR04
+      position: {x: -0.18298742, y: -1.4210854e-16, z: 2.1316282e-16}
+      rotation: {x: 0.14915639, y: 0.6759029, z: -0.05297586, w: 0.7197925}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegR06
+      parentName: LegR05
+      position: {x: -0.25553375, y: -2.2204459e-17, z: -2.842171e-16}
+      rotation: {x: -0.45973328, y: -0.3391069, z: 0.6076002, w: 0.55179155}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegR07
+      parentName: Spine01
+      position: {x: 0.0006869391, y: 0.17632127, z: -0.445388}
+      rotation: {x: 0.048791975, y: 0.8384077, z: 0.5329422, w: -0.1032695}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegR08
+      parentName: LegR07
+      position: {x: -0.20172729, y: -2.1316282e-16, z: 1.4210854e-16}
+      rotation: {x: -0.25928962, y: 0.089381486, z: -0.07206993, w: 0.9589504}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegR09
+      parentName: LegR08
+      position: {x: -0.3136501, y: 7.105427e-17, z: 7.105427e-16}
+      rotation: {x: -0.11824594, y: -0.16773671, z: 0.949401, w: 0.2377396}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -160,13 +530,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
