@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeWeapon: {fileID: 2676089366466874100}
+  materials: []
 --- !u!1 &95810153846043687
 GameObject:
   m_ObjectHideFlags: 0
