@@ -88,7 +88,7 @@ public class CameraEnemy : AIAgent
         return index;
     }
 
-    private void Chasing() //TODO send message to other enemies
+    private void Chasing()
     {
         if (playerTransform == null)
         {
