@@ -27,7 +27,7 @@ public class MeleeEnemy : AIAgent
 
     [Header("Chasing")]
     [SerializeField] private float chasingSpeed = 7f;
-    [SerializeField] private float timeToForget;
+    [SerializeField] private float timeToForget = 1.5f;
     private Transform playerTransform;
     private float counter;
 
@@ -106,15 +106,17 @@ public class MeleeEnemy : AIAgent
             }
         }
 
-        if (Vector3.Distance(playerTransform.position, transform.position) < attackDistance) //TODO Roll Dice, base Attack?
+        if (Vector3.Distance(playerTransform.position, transform.position) < attackDistance)
         {
+            Debug.Log("Attack");
             Collider[] playerCollider = Physics.OverlapSphere(attackPoint.position, attackSize, playerLayer, QueryTriggerInteraction.Ignore);
 
             foreach (Collider player in playerCollider)
             {
-                if (TryGetComponent<PlayerMovement>(out PlayerMovement playerMovement))
+                if (player.gameObject.transform.parent.TryGetComponent<PlayerMovement>(out PlayerMovement playerMovement)) //TODO change this xd
                 {
-                    Debug.Log($"player {playerMovement.gameObject.name} hit");
+                    Debug.Log($"player {player.gameObject.transform.parent.name} hit"); //TODO Roll Dice, base Attack?
+                    break;
                 }
             }
         }
@@ -137,5 +139,13 @@ public class MeleeEnemy : AIAgent
     {
         waiting = false;
         state = State.Patrolling;
+    }
+
+    protected override void OnDrawGizmosSelected()
+    {
+        base.OnDrawGizmosSelected();
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(attackPoint.position, attackSize);
     }
 }
