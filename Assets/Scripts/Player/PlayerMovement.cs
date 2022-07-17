@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,8 +14,32 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator animator;
 
     private Vector3 input;
-
     private PlayerSkills playerSkills;
+
+    private bool diceActivated = false;
+
+    private void OnEnable()
+    {
+        PlayerDice.OnDiceActivated += PlayerDice_OnDiceActivated;
+        PlayerDice.OnDiceDeactivated += PlayerDice_OnDiceDeactivated;
+    }
+
+    private void OnDisable()
+    {
+        PlayerDice.OnDiceActivated -= PlayerDice_OnDiceActivated;
+        PlayerDice.OnDiceDeactivated -= PlayerDice_OnDiceDeactivated;
+    }
+    private void PlayerDice_OnDiceActivated(object sender, EventArgs e)
+    {
+        diceActivated = true;
+        input = Vector3.zero;
+    }
+
+    private void PlayerDice_OnDiceDeactivated(object sender, EventArgs e)
+    {
+        diceActivated = false;
+    }
+
     private void Start()
     {
         playerSkills = GetComponent<PlayerSkills>();
@@ -22,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (diceActivated) return;
+
         if (playerSkills.isInvisible) moveSpeed = invisibleSpeed; //FIX maybe change this with an observer pattern or something similar
         else moveSpeed = normalMoveSpeed;
 
@@ -31,11 +58,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         if (input == Vector3.zero)
         {
             animator.SetBool("Walk", false);
             return;
         }
+
+        if (diceActivated) return;
 
         Move();
     }

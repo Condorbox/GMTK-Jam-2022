@@ -17,10 +17,22 @@ public class Bullet : MonoBehaviour
 
         rigidbody.AddForce(moveDir * bulletSpeed, ForceMode.Impulse);
         Invoke("CoolBullet", timeOfLive);
-    } 
+    }
 
-    private void CoolBullet()
+    protected void CoolBullet()
     {
         PoolManager.Instance.CoolObject(this.gameObject, bulletType);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if (TryGetComponent<HealthSystem>(out HealthSystem healthSystem))
+            {
+                healthSystem.Damage(damage);
+                CoolBullet();
+            }
+        }
     }
 }

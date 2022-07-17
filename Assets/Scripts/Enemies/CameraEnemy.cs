@@ -40,6 +40,8 @@ public class CameraEnemy : AIAgent
 
     private void Update()
     {
+        if (GetDiceActivated()) return;
+
         switch (state)
         {
             case State.Searching:

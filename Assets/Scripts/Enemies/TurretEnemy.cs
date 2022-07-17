@@ -44,6 +44,8 @@ public class TurretEnemy : AIAgent
 
     private void Update()
     {
+        if (GetDiceActivated()) return;
+
         switch (state)
         {
             case State.Searching:

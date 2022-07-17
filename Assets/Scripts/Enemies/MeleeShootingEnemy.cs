@@ -34,13 +34,11 @@ public class MeleeShootingEnemy : MeleeEnemy
             if (counterStopChasing <= 0)
             {
                 numberProbChase = 10; //Always Shooting :D
-                Debug.Log("Now shoot");
                 counterStopChasing = timeChasing;
             }
         }
         else
         {
-            Debug.Log("Shoot");
             Shooting();
         }
     }
