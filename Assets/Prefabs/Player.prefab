@@ -73,11 +73,12 @@ GameObject:
   - component: {fileID: 95810153321087668}
   - component: {fileID: 95810153321087673}
   - component: {fileID: 95810153321087670}
-  - component: {fileID: 95810153321087671}
   - component: {fileID: 1916860009}
   - component: {fileID: 1557091984}
   - component: {fileID: 1453229369}
   - component: {fileID: 1453229370}
+  - component: {fileID: 1453229377}
+  - component: {fileID: 1453229376}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -115,11 +116,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 36
-  m_CollisionDetection: 0
+  m_Constraints: 80
+  m_CollisionDetection: 2
 --- !u!65 &95810153321087670
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -128,29 +129,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95810153321087669}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.4068114, y: 2.0181475, z: 1}
   m_Center: {x: 0.029082716, y: 0.5090747, z: 0}
---- !u!114 &95810153321087671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 95810153321087669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d07ceae4ce7025548977fb08d1d307b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalMoveSpeed: 10
-  invisibleSpeed: 5
-  rotationSpeed: 400
-  rb: {fileID: 95810153321087673}
-  modelTransform: {fileID: 95810153321087668}
-  animator: {fileID: 604919120781959678}
 --- !u!114 &1916860009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +199,41 @@ MonoBehaviour:
   diceMaxValues: 640000003c0000003200000030000000220000001e000000180000001400000012000000100000000e0000000c000000070000000600000005000000040000000300000002000000
   diceTime: 1
   diceNumberTarget: 0
+--- !u!143 &1453229377
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95810153321087669}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2.33
+  m_Radius: 0.65
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.44, z: 0}
+--- !u!114 &1453229376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95810153321087669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d917b23b19cf4e47bf48863818bde6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1453229377}
+  normalMoveSpeed: 10
+  invisibleSpeed: 5
+  rotationSpeed: 400
+  animator: {fileID: 604919120781959678}
 --- !u!1 &5967468147423100874
 GameObject:
   m_ObjectHideFlags: 0
