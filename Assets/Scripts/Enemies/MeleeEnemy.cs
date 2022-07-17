@@ -37,9 +37,12 @@ public class MeleeEnemy : AIAgent
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackSize = .3f;
 
+    private Animator animator;
+
     private void Awake()
     {
         state = State.Patrolling;
+        animator = transform.GetChild(0).GetComponent<Animator>();
         agent.speed = patrollingSpeed;
     }
 
@@ -58,15 +61,18 @@ public class MeleeEnemy : AIAgent
 
     protected virtual void AttackAction()
     {
+        animator.SetBool("Walk", true);
         Chasing();
     }
     private void Patrolling()
     {
         if (waiting) return;
+        animator.SetBool("Walk", true);
         agent.destination = wayPoints[index].position;
 
         if (Vector3.Distance(transform.position, wayPoints[index].position) < minDistance)
         {
+            animator.SetBool("Walk", false);
             index = NextIndex(index);
             waiting = true;
             StartCoroutine(WaitSeconds());
@@ -114,6 +120,8 @@ public class MeleeEnemy : AIAgent
         if (Vector3.Distance(playerTransform.position, transform.position) < attackDistance)
         {
             Debug.Log("Attack");
+            animator.SetBool("Walk", false);
+            animator.SetBool("Attack", true);
             Collider[] playerCollider = Physics.OverlapSphere(attackPoint.position, attackSize, playerLayer, QueryTriggerInteraction.Ignore);
 
             foreach (Collider player in playerCollider)
@@ -158,5 +166,10 @@ public class MeleeEnemy : AIAgent
         if (attackPoint == null) return;
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(attackPoint.position, attackSize);
+    }
+
+    void OnAnimatorMove()
+    {
+        agent.velocity = animator.deltaPosition / Time.deltaTime;
     }
 }
