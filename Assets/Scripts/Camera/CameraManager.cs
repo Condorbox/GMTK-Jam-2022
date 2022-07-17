@@ -19,11 +19,6 @@ public class CameraManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.T))
-        {
-            ChangeCamera();
-        }
-
         if (activated)
         {
             counter -= Time.deltaTime;
