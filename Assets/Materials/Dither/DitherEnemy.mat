@@ -91,7 +91,7 @@ Material:
     - _Dither_Strong: 0.9
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Fresnel_Power: 1
+    - _Fresnel_Power: 0.07
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
