@@ -27,6 +27,5 @@ public class AmmoWorldUI : MonoBehaviour
     private void UpdateAmmoBar()
     {
         ammoBarImage.fillAmount = shootController.GetAmmoNormalized();
-        Debug.Log(shootController.GetAmmoNormalized());
     }
 }

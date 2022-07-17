@@ -72,11 +72,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Look()
     {
+        /*Vector3 mousePos = Input.mousePosition;
+        mousePos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, Camera.main.transform.position.y - transform.position.y));
+        var targetRotation = Quaternion.LookRotation(mousePos - new Vector3(transform.position.x, 0, transform.position.z));
+        transform.eulerAngles = Vector3.up * Mathf.MoveTowardsAngle(transform.eulerAngles.y, targetRotation.eulerAngles.y, rotationSpeed * Time.deltaTime);*/
+
         if (input == Vector3.zero) return;
 
-        Quaternion rot = Quaternion.LookRotation(input.ToIsometric(), Vector3.up);
-        modelTransform.rotation = Quaternion.RotateTowards(modelTransform.rotation, rot, rotationSpeed * Time.deltaTime);
-
+        Quaternion targetRotation = Quaternion.LookRotation(input.ToIsometric(), Vector3.up);
+        modelTransform.rotation = Quaternion.RotateTowards(modelTransform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     void GetInput()//TODO Change for the new Input System
@@ -86,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
+        if (input == Vector3.zero) return;
         animator.SetBool("Walk", true);
         rb.MovePosition(transform.position + input.ToIsometric() * input.normalized.magnitude * moveSpeed * Time.deltaTime);
     }
