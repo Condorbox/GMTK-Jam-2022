@@ -122,6 +122,7 @@ public class MeleeEnemy : AIAgent
         if (Vector3.Distance(playerTransform.position, transform.position) < attackDistance)
         {
             Debug.Log("Attack");
+            agent.isStopped = true;
             animator.SetBool("Walk", false);
             animator.SetBool("Attack", true);
             Collider[] playerCollider = Physics.OverlapSphere(attackPoint.position, attackSize, playerLayer, QueryTriggerInteraction.Ignore);
@@ -185,5 +186,10 @@ public class MeleeEnemy : AIAgent
     void OnAnimatorMove()
     {
         agent.velocity = animator.deltaPosition / Time.deltaTime;
+    }
+
+    public void stopAgent()
+    {
+        agent.isStopped = true;
     }
 }
