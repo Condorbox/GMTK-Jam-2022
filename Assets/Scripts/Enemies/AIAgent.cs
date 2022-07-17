@@ -9,14 +9,30 @@ public abstract class AIAgent : MonoBehaviour
     [SerializeField] private float tellOthersPositionOfPlayerRadius = 3f;
     [SerializeField] private LayerMask enemiesLayers;
 
+    private bool diceActivated = false;
+
     private void OnEnable()
     {
         aiSensor.OnPlayerDetected += AISensor_OnPlayerDetected;
+        PlayerDice.OnDiceActivated += PlayerDice_OnDiceActivated;
+        PlayerDice.OnDiceDeactivated += PlayerDice_OnDiceDeactivated;
     }
 
     private void OnDisable()
     {
         aiSensor.OnPlayerDetected -= AISensor_OnPlayerDetected;
+        PlayerDice.OnDiceActivated -= PlayerDice_OnDiceActivated;
+        PlayerDice.OnDiceDeactivated -= PlayerDice_OnDiceDeactivated;
+    }
+
+    protected virtual void PlayerDice_OnDiceActivated(object sender, EventArgs e)
+    {
+        diceActivated = true;
+    }
+
+    protected virtual void PlayerDice_OnDiceDeactivated(object sender, EventArgs e)
+    {
+        diceActivated = false;
     }
 
     private void AISensor_OnPlayerDetected(object sender, Transform e)
@@ -43,6 +59,11 @@ public abstract class AIAgent : MonoBehaviour
     protected virtual void ReceivedPlayerIsInSight(Transform playerTransform)
     {
 
+    }
+
+    protected bool GetDiceActivated()
+    {
+        return diceActivated;
     }
 
     protected virtual void OnDrawGizmosSelected()

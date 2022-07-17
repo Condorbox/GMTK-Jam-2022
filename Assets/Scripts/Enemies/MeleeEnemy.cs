@@ -45,6 +45,8 @@ public class MeleeEnemy : AIAgent
 
     private void Update()
     {
+        if (GetDiceActivated()) return;
+
         switch (state)
         {
             case State.Patrolling:
@@ -149,6 +151,18 @@ public class MeleeEnemy : AIAgent
     {
         waiting = false;
         state = State.Patrolling;
+    }
+
+    protected override void PlayerDice_OnDiceActivated(object sender, EventArgs e)
+    {
+        base.PlayerDice_OnDiceActivated(sender, e);
+        agent.enabled = false;
+    }
+
+    protected override void PlayerDice_OnDiceDeactivated(object sender, EventArgs e)
+    {
+        base.PlayerDice_OnDiceDeactivated(sender, e);
+        agent.enabled = true;
     }
 
     protected override void OnDrawGizmosSelected()

@@ -15,8 +15,30 @@ public class ShootController : MonoBehaviour
     private event EventHandler OnShoot;
     private event EventHandler OnFailShoot;
 
+    private bool diceActivated = false;
+
     //[SerializeField] private Animator animator;
 
+    private void OnEnable()
+    {
+        PlayerDice.OnDiceActivated += PlayerDice_OnDiceActivated;
+        PlayerDice.OnDiceDeactivated += PlayerDice_OnDiceDeactivated;
+    }
+
+    private void OnDisable()
+    {
+        PlayerDice.OnDiceActivated -= PlayerDice_OnDiceActivated;
+        PlayerDice.OnDiceDeactivated -= PlayerDice_OnDiceDeactivated;
+    }
+    private void PlayerDice_OnDiceActivated(object sender, EventArgs e)
+    {
+        diceActivated = true;
+    }
+
+    private void PlayerDice_OnDiceDeactivated(object sender, EventArgs e)
+    {
+        diceActivated = false;
+    }
 
     private void Awake()
     {
@@ -25,6 +47,8 @@ public class ShootController : MonoBehaviour
 
     private void Update()
     {
+        if (diceActivated) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
@@ -33,13 +57,13 @@ public class ShootController : MonoBehaviour
 
     private void Shoot()
     {
-        if (ammoCounter < weaponData.ammoComsum)
+        if (ammoCounter < weaponData.ammoConsume)
         {
             OnFailShoot?.Invoke(this, EventArgs.Empty);
             return;
         }
 
-        ammoCounter -= weaponData.ammoComsum;
+        ammoCounter -= weaponData.ammoConsume;
 
         GameObject bulletGameObject = PoolManager.Instance.GetPoolObject(weaponData.bulletType);
         bulletGameObject.transform.position = shootPoint.position;
@@ -47,7 +71,7 @@ public class ShootController : MonoBehaviour
         bulletGameObject.SetActive(true);
 
         Vector3 shootDir = (shootPoint.position - transform.position).normalized.ToIsometric();
-        bulletGameObject.GetComponent<Bullet>().SetUp(shootDir, weaponData.damage,weaponData.bulletType);
+        bulletGameObject.GetComponent<Bullet>().SetUp(shootDir, weaponData.damage, weaponData.bulletType);
 
         OnShoot?.Invoke(this, EventArgs.Empty);
     }

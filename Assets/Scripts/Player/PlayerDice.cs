@@ -13,11 +13,10 @@ public class PlayerDice : MonoBehaviour
 
     [SerializeField] private int minValue = 1;
     [SerializeField] private int maxValue = 100;
+    [SerializeField] private float diceTime = 1f;
 
-    void Start()
-    {
-        
-    }
+    public static EventHandler OnDiceActivated;
+    public static EventHandler OnDiceDeactivated;
 
     // Update is called once per frame
     void Update()
@@ -30,6 +29,7 @@ public class PlayerDice : MonoBehaviour
     public async void ThrowDice()
     {
         dice.SetActive(true);
+        OnDiceActivated?.Invoke(this, EventArgs.Empty);
 
         string realValue = Mathf.RoundToInt(UnityEngine.Random.Range(minValue, maxValue)).ToString();
 
@@ -37,6 +37,7 @@ public class PlayerDice : MonoBehaviour
 
         diceText.text = realValue;
         Debug.Log(realValue);
+        Invoke("DeactivateDice", diceTime);
 
         //Debug.Log(Mathf.RoundToInt(UnityEngine.Random.Range(minValue, maxValue)));
     }
@@ -48,5 +49,11 @@ public class PlayerDice : MonoBehaviour
             diceText.text = Mathf.RoundToInt(UnityEngine.Random.Range(minValue, maxValue)).ToString();
             await Task.Yield();
         }
+    }
+
+    private void DeactivateDice()
+    {
+        dice.SetActive(false);
+        OnDiceDeactivated?.Invoke(this, EventArgs.Empty);
     }
 }
