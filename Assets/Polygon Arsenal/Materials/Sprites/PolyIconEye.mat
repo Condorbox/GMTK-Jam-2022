@@ -72,12 +72,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Intensity_SpriteShaderSoft: 3
+    - Intensity_SpriteShaderSoft: 10
     - PA_SSS_Intensity_: 3
     - PA_SSS_SPF_: 1
     - PA_SSS_SP_: 1
-    - SPF_SpriteShaderSoft: 1
-    - SP_SpriteShaderSoft: 1
+    - SPF_SpriteShaderSoft: 0
+    - SP_SpriteShaderSoft: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BlendOp: 0
