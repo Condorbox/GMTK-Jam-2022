@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Miami
   m_EditorClassIdentifier: 
   damage: 1
-  ammoComsum: 5
+  ammoConsume: 5
   minDispersionPercentaje: 0.5
   maxDispersionPercentaje: 1.5
+  bulletType: 0
