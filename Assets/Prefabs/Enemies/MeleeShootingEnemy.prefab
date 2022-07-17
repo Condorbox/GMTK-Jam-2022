@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741bf5d61d255e94d815be41a46d99b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 15
-  angle: 30
+  distance: 20
+  angle: 40
   heigh: 1.61
   debugMeshColor: {r: 1, g: 0, b: 0, a: 0.3254902}
   scanFrequency: 20
@@ -299,16 +299,16 @@ MonoBehaviour:
   patrollingSpeed: 4.5
   minDistance: 0.2
   timeToWaitBtwPoints: 0.5
-  chasingSpeed: 7
+  chasingSpeed: 9
   timeToForget: 1.5
   attackDistance: 1
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
   attackPoint: {fileID: 4136155931026485643}
-  attackSize: 1
+  attackSize: 1.33
   timeChasing: 1.5
-  probabilityChase: 0
+  probabilityChase: 0.3
   rotationShootingSpeed: 0.5
   bulletType: 1
   bulletsInOneRound: 5

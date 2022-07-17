@@ -28,13 +28,13 @@ public class MeleeShootingEnemy : MeleeEnemy
     {
         if (numberProbChase <= probabilityChase)
         {
-            Debug.Log("Chase");
             Chasing();
 
             counterStopChasing -= Time.deltaTime;
             if (counterStopChasing <= 0)
             {
-                probabilityChase = 2; //Always Shooting :D
+                numberProbChase = 10; //Always Shooting :D
+                Debug.Log("Now shoot");
                 counterStopChasing = timeChasing;
             }
         }

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 4f;
+    [SerializeField] private float normalMoveSpeed = 10f;
+    [SerializeField] private float invisibleSpeed = 5f;
+    private float moveSpeed = 4f;
     [SerializeField] private float rotationSpeed = 360f;
-
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Transform modelTransform;
     [SerializeField] private Animator animator;
@@ -21,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (playerSkills.isInvisible) moveSpeed = 2f;
-        else moveSpeed = 4f;
+        if (playerSkills.isInvisible) moveSpeed = invisibleSpeed; //FIX maybe change this with an observer pattern or something similar
+        else moveSpeed = normalMoveSpeed;
 
         GetInput();
         Look();
@@ -53,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
     }
 
-    void Move() 
+    void Move()
     {
         animator.SetBool("Walk", true);
         rb.MovePosition(transform.position + input.ToIsometric() * input.normalized.magnitude * moveSpeed * Time.deltaTime);

@@ -118,9 +118,9 @@ public class MeleeEnemy : AIAgent
 
             foreach (Collider player in playerCollider)
             {
-                if (player.gameObject.transform.parent.TryGetComponent<PlayerMovement>(out PlayerMovement playerMovement)) //TODO change this xd
+                if (player.gameObject.TryGetComponent<PlayerMovement>(out PlayerMovement playerMovement)) //TODO change this xd
                 {
-                    Debug.Log($"player {player.gameObject.transform.parent.name} hit"); //TODO Roll Dice, base Attack?
+                    Debug.Log($"player {player.gameObject.name} hit"); //TODO Roll Dice, base Attack?
                     break;
                 }
             }
