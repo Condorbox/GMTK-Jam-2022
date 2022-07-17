@@ -1346,6 +1346,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7863532732289643458, guid: 09d56943d3737254db461171a7f9971a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09d56943d3737254db461171a7f9971a, type: 3}
 --- !u!1001 &8226096425878209386
@@ -1402,6 +1406,10 @@ PrefabInstance:
     - target: {fileID: 4136155931087909063, guid: 280917c02078df94f9e4ce1c0ebd1c52, type: 3}
       propertyPath: m_Name
       value: MeleeShootingEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4136155931087909063, guid: 280917c02078df94f9e4ce1c0ebd1c52, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4136155931087909074, guid: 280917c02078df94f9e4ce1c0ebd1c52, type: 3}
       propertyPath: wayPoints.Array.data[0]

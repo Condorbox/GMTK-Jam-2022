@@ -12,8 +12,8 @@ public class ShootController : MonoBehaviour
     [SerializeField] private int maxAmmo = 100;
     private int ammoCounter;
 
-    private event EventHandler OnShoot;
-    private event EventHandler OnFailShoot;
+    public event EventHandler OnShoot;
+    public event EventHandler OnFailShoot;
 
     private bool diceActivated = false;
 
@@ -74,5 +74,10 @@ public class ShootController : MonoBehaviour
         bulletGameObject.GetComponent<Bullet>().SetUp(shootDir, weaponData.damage, weaponData.bulletType, this.gameObject);
 
         OnShoot?.Invoke(this, EventArgs.Empty);
+    }
+
+    public float GetAmmoNormalized()
+    {
+        return (float)ammoCounter / maxAmmo;
     }
 }
