@@ -158,7 +158,6 @@ public class TurretEnemy : AIAgent
         if (Vector3.Distance(rotationDir, transform.forward) < minDistanceRotation)
         {
             counterForget -= Time.deltaTime;
-            Debug.Log($"Listened: {counterForget}");
             if (counterForget <= 0)
             {
                 waiting = false;

@@ -29,12 +29,21 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag(targetTag))
+        ManageCollisions(collision.gameObject);
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        ManageCollisions(collider.gameObject);
+    }
+
+    private void ManageCollisions(GameObject collision)
+    {
+        if (collision.CompareTag(targetTag))
         {
             if (TryGetComponent<HealthSystem>(out HealthSystem healthSystem))
             {
                 healthSystem.Damage(damage, shooter);
-                Debug.Log("Hit to: " + collision.gameObject.name);
                 CoolBullet();
             }
         }
