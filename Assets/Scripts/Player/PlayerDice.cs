@@ -44,7 +44,7 @@ public class PlayerDice : MonoBehaviour
         StartCoroutine(CheckDice(e));
     }
 
-    private IEnumerator CheckDice(Death e) //TODO Change Index?
+    private IEnumerator CheckDice(Death e)
     {
         yield return new WaitUntil(() => roll);
         if (e.murdered.CompareTag("Player"))
@@ -56,14 +56,14 @@ public class PlayerDice : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
         else
         {
             if (diceNumber == diceNumberTarget)
             {
-                SceneManager.LoadScene(0); //BadLuck
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //BadLuck
             }
             else
             {
