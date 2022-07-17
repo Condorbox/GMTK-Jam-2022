@@ -83,7 +83,7 @@ public class MeleeShootingEnemy : MeleeEnemy
 
             Vector3 shootDir = (playerTransform.position - shootPoint.position).normalized;
             Vector3 precisionVector = new Vector3(Random.Range(shootDir.x * minPrecision, shootDir.x * maxPrecision), shootDir.y, Random.Range(shootDir.z * minPrecision, shootDir.z * maxPrecision));
-            bulletGameObject.GetComponent<Bullet>().SetUp(precisionVector, 1, bulletType);
+            bulletGameObject.GetComponent<Bullet>().SetUp(precisionVector, 1, bulletType, this.gameObject);
 
             yield return new WaitForSeconds(timeBtwBullets);
         }

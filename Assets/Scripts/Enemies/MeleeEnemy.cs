@@ -115,14 +115,13 @@ public class MeleeEnemy : AIAgent
 
         if (Vector3.Distance(playerTransform.position, transform.position) < attackDistance)
         {
-            Debug.Log("Attack");
             Collider[] playerCollider = Physics.OverlapSphere(attackPoint.position, attackSize, playerLayer, QueryTriggerInteraction.Ignore);
 
             foreach (Collider player in playerCollider)
             {
-                if (player.gameObject.TryGetComponent<PlayerMovement>(out PlayerMovement playerMovement)) //TODO change this xd
+                if (player.gameObject.TryGetComponent<HealthSystem>(out HealthSystem healthSystem)) //TODO change this xd
                 {
-                    Debug.Log($"player {player.gameObject.name} hit"); //TODO Roll Dice, base Attack?
+                    healthSystem.Damage(float.MaxValue, this.gameObject);
                     break;
                 }
             }

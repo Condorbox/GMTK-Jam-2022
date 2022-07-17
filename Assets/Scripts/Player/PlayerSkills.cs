@@ -31,6 +31,8 @@ public class PlayerSkills : MonoBehaviour
     private void PlayerDice_OnDiceActivated(object sender, EventArgs e)
     {
         diceActivated = true;
+        animator.SetBool("Attack", false);
+        animator.SetBool("Invisible", false);
     }
 
     private void PlayerDice_OnDiceDeactivated(object sender, EventArgs e)
@@ -83,7 +85,7 @@ public class PlayerSkills : MonoBehaviour
         {
             if (enemy.TryGetComponent<HealthSystem>(out HealthSystem healthSystem))
             {
-                healthSystem.Damage(float.MaxValue);
+                healthSystem.Damage(float.MaxValue, this.gameObject);
             }
         }
     }
