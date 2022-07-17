@@ -71,7 +71,7 @@ public class ShootController : MonoBehaviour
         bulletGameObject.SetActive(true);
 
         Vector3 shootDir = (shootPoint.position - transform.position).normalized.ToIsometric();
-        bulletGameObject.GetComponent<Bullet>().SetUp(shootDir, weaponData.damage, weaponData.bulletType);
+        bulletGameObject.GetComponent<Bullet>().SetUp(shootDir, weaponData.damage, weaponData.bulletType, this.gameObject);
 
         OnShoot?.Invoke(this, EventArgs.Empty);
     }

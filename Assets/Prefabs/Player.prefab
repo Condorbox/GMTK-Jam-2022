@@ -212,9 +212,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dice: {fileID: 0}
   diceText: {fileID: 0}
-  minValue: 1
-  maxValue: 100
+  diceMaxValues: 640000003c0000003200000030000000220000001e000000180000001400000012000000100000000e0000000c000000070000000600000005000000040000000300000002000000
   diceTime: 1
+  diceNumberTarget: 0
 --- !u!1001 &663738251510104876
 PrefabInstance:
   m_ObjectHideFlags: 0

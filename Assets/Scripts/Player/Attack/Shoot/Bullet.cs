@@ -5,13 +5,16 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float bulletSpeed = 100f;
+    [SerializeField] private string targetTag = "Enemy";
     private float damage;
     private float timeOfLive = 3f;
     private PoolObjectType bulletType;
-    public void SetUp(Vector3 moveDir, float damage, PoolObjectType bulletType)
+    GameObject shooter;
+    public void SetUp(Vector3 moveDir, float damage, PoolObjectType bulletType, GameObject shooter)
     {
         this.bulletType = bulletType;
         this.damage = damage;
+        this.shooter = shooter;
 
         Rigidbody rigidbody = GetComponent<Rigidbody>();
 
@@ -26,11 +29,12 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag(targetTag))
         {
             if (TryGetComponent<HealthSystem>(out HealthSystem healthSystem))
             {
-                healthSystem.Damage(damage);
+                healthSystem.Damage(damage, shooter);
+                Debug.Log("Hit to: " + collision.gameObject.name);
                 CoolBullet();
             }
         }

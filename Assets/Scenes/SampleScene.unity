@@ -494,11 +494,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
---- !u!1 &612871885 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 95810153321087669, guid: 58a5c0b2d22dc5645bed304ca7081203, type: 3}
-  m_PrefabInstance: {fileID: 95810154097063121}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &743266752
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,36 +825,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 95810153321087668, guid: 58a5c0b2d22dc5645bed304ca7081203, type: 3}
   m_PrefabInstance: {fileID: 95810154097063121}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1453229369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612871885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4655826afb9920f469557ab13ea291d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 0
---- !u!114 &1453229370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612871885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c76a42c57847f304f893dea15eb8613e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dice: {fileID: 4632538092578674351}
-  diceText: {fileID: 4632538092578674350}
-  minValue: 1
-  maxValue: 100
-  diceTime: 1
 --- !u!1 &2045746962
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +929,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1453229370, guid: 58a5c0b2d22dc5645bed304ca7081203, type: 3}
+      propertyPath: dice
+      value: 
+      objectReference: {fileID: 4632538092578674351}
+    - target: {fileID: 1453229370, guid: 58a5c0b2d22dc5645bed304ca7081203, type: 3}
+      propertyPath: diceText
+      value: 
+      objectReference: {fileID: 4632538092578674350}
     - target: {fileID: 95810153321087668, guid: 58a5c0b2d22dc5645bed304ca7081203, type: 3}
       propertyPath: m_RootOrder
       value: 2
