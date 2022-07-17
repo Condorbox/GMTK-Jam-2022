@@ -58,6 +58,7 @@ public class MeleeShootingEnemy : MeleeEnemy
         counterRounds -= Time.deltaTime;
         if (counterRounds <= 0)
         {
+            animator.SetBool("Shoot", true);
             StartCoroutine(ShootBullets());
             counterRounds = timeBtwRounds;
         }
@@ -67,6 +68,8 @@ public class MeleeShootingEnemy : MeleeEnemy
             counterForget -= Time.deltaTime;
             if (counterForget <= 0)
             {
+                animator.SetBool("Shoot", false);
+                animator.SetBool("Walk", true);
                 StateToPatrolling();
             }
         }

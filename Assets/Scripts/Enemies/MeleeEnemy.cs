@@ -37,7 +37,7 @@ public class MeleeEnemy : AIAgent
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackSize = .3f;
 
-    private Animator animator;
+    protected Animator animator;
 
     private void Awake()
     {
